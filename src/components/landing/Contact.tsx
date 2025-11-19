@@ -11,12 +11,12 @@ export function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      content: '+1 (234) 567-8900',
+      content: '+250 788863209',
     },
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@12keys.com',
+      content: 'info@12keys.agency',
     },
     {
       icon: Clock,
