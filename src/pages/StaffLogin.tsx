@@ -1,16 +1,47 @@
 import { useState } from 'react';
 import { Shield } from 'lucide-react';
+import { supabase } from '../lib/supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 export function StaffLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setLoading(false);
+    setError('');
+
+    try {
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (authError) throw authError;
+
+      const { data: staffData, error: staffError } = await supabase
+        .from('staff_users')
+        .select('*')
+        .eq('id', authData.user.id)
+        .maybeSingle();
+
+      if (staffError) throw staffError;
+
+      if (!staffData) {
+        await supabase.auth.signOut();
+        throw new Error('Not authorized as staff');
+      }
+
+      navigate('/staff/dashboard');
+    } catch (err: any) {
+      setError(err.message || 'Failed to sign in');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -27,6 +58,12 @@ export function StaffLogin() {
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
+          {error && (
+            <div className="bg-red-900/30 border border-red-700 text-red-300 px-4 py-3 text-sm">
+              {error}
+            </div>
+          )}
+
           <div>
             <label htmlFor="email" className="block text-sm font-light tracking-wide uppercase text-gray-400 mb-2">
               Email

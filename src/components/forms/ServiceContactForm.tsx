@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
+import { supabase } from '../../lib/supabaseClient';
 
 interface ServiceContactFormProps {
   serviceName?: string;
@@ -38,9 +39,25 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
     setSubmitStatus('idle');
 
     try {
+      const { error } = await supabase
+        .from('service_requests')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service_type: formData.serviceName,
+            message: formData.message,
+            status: 'pending',
+          },
+        ]);
+
+      if (error) throw error;
+
       if (onSubmit) {
         onSubmit(formData);
       }
+
       setSubmitStatus('success');
       setFormData({
         name: '',
@@ -50,6 +67,7 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
         serviceName,
       });
     } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
