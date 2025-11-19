@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
 import { supabase } from '../../lib/supabaseClient';
+import { sendToWebhook } from '../../api/contact-webhook';
 
 interface ServiceContactFormProps {
   serviceName?: string;
@@ -53,6 +54,14 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
         ]);
 
       if (error) throw error;
+
+      await sendToWebhook({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        serviceName: formData.serviceName,
+      });
 
       if (onSubmit) {
         onSubmit(formData);
