@@ -9,20 +9,24 @@ interface ServiceContactFormProps {
 }
 
 interface FormData {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   serviceType: string;
-  phone: string;
+  countryCode: string;
+  phoneNumber: string;
   message: string;
   serviceName: string;
 }
 
 export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContactFormProps) {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     serviceType: '',
-    phone: '',
+    countryCode: '',
+    phoneNumber: '',
     message: '',
     serviceName,
   });
@@ -42,13 +46,16 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
     setSubmitStatus('idle');
 
     try {
+      const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+      const fullPhone = `${formData.countryCode}${formData.phoneNumber}`.trim();
+
       const { error } = await supabase
         .from('service_requests')
         .insert([
           {
-            name: formData.name,
+            name: fullName,
             email: formData.email,
-            phone: formData.phone,
+            phone: fullPhone,
             service_type: formData.serviceName,
             message: formData.message,
             status: 'pending',
@@ -58,9 +65,9 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
       if (error) throw error;
 
       await sendToWebhook({
-        name: formData.name,
+        name: fullName,
         email: formData.email,
-        phone: formData.phone,
+        phone: fullPhone,
         message: formData.message,
         serviceName: formData.serviceName,
         subject: formData.serviceType,
@@ -72,10 +79,12 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
 
       setSubmitStatus('success');
       setFormData({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         serviceType: '',
-        phone: '',
+        countryCode: '',
+        phoneNumber: '',
         message: '',
         serviceName,
       });
@@ -89,19 +98,37 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-sm font-light tracking-wide uppercase text-gray-700 mb-2">
-          Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
-        />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="firstName" className="block text-sm font-light tracking-wide uppercase text-gray-700 mb-2">
+            First Name
+          </label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+            placeholder="e.g., John"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName" className="block text-sm font-light tracking-wide uppercase text-gray-700 mb-2">
+            Last Name
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+            placeholder="e.g., Gasana"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
+          />
+        </div>
       </div>
 
       <div>
@@ -115,6 +142,7 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
           value={formData.email}
           onChange={handleChange}
           required
+          placeholder="e.g., john@example.com"
           className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
         />
       </div>
@@ -130,23 +158,40 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
           value={formData.serviceType}
           onChange={handleChange}
           required
-          placeholder="e.g., Private Events, Corporate Functions, Luxury Experiences"
+          placeholder="e.g., Private Events, Corporate Functions"
           className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
         />
       </div>
 
-      <div>
-        <label htmlFor="phone" className="block text-sm font-light tracking-wide uppercase text-gray-700 mb-2">
-          Phone
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
-        />
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div>
+          <label htmlFor="countryCode" className="block text-sm font-light tracking-wide uppercase text-gray-700 mb-2">
+            Country Code
+          </label>
+          <input
+            type="text"
+            id="countryCode"
+            name="countryCode"
+            value={formData.countryCode}
+            onChange={handleChange}
+            placeholder="+250"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
+          />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="phoneNumber" className="block text-sm font-light tracking-wide uppercase text-gray-700 mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            placeholder="e.g., 788123456"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white"
+          />
+        </div>
       </div>
 
       <div>
@@ -160,6 +205,7 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
           onChange={handleChange}
           required
           rows={4}
+          placeholder="Write your message here…"
           className="w-full px-4 py-3 border border-gray-300 focus:border-[#8e6d46] focus:outline-none transition-colors bg-white resize-none"
         />
       </div>
