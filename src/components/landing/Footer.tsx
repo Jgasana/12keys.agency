@@ -62,7 +62,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-gray-400 font-light">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>KK 20 Avenue<br />Kigali, Rwanda</span>
+                <span>Telegram<br />Twelvekeys_bot</span>
               </li>
             </ul>
           </div>
