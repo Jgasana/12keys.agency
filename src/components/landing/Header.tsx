@@ -35,7 +35,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="tel:+1234567890"
+              href="tel:+250788863209"
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors"
             >
               <Phone className="w-4 h-4" />
