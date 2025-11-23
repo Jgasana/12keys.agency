@@ -75,7 +75,7 @@ export function Header() {
             ))}
             <div className="pt-4 border-t border-gray-200 space-y-3">
               <a
-                href="tel:+1234567890"
+                href="tel:+250 788863209"
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors py-2"
               >
                 <Phone className="w-4 h-4" />
