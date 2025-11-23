@@ -24,7 +24,6 @@ export function Footer() {
            <h3 className="text-3xl font-light tracking-widest uppercase mb-6 text-[#a2886a]">
   <span className="text-4xl font-normal">12</span>keys Agency
 </h3>
-
             <p className="text-gray-400 font-light leading-relaxed">
               Your trusted partner for exceptional concierge services.
             </p>
