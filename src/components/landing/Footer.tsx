@@ -22,7 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-2xl font-light tracking-widest uppercase mb-6 text-[#a2886a]">
-              12 Keys Agency
+              12Keys Agency
             </h3>
             <p className="text-gray-400 font-light leading-relaxed">
               Your trusted partner for exceptional concierge services.
