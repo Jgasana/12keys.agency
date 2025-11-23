@@ -91,7 +91,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 font-light text-sm">
-            &copy; {currentYear} 12Keys Agency. All rights reserved.
+            &copy; {currentYear} 12 Keys Agency. All rights reserved.
           </p>
         </div>
       </div>
