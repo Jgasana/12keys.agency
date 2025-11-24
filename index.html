@@ -8,24 +8,32 @@
     <meta property="og:image" content="https://bolt.new/static/og_default.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
-</head>
+  </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Chatwoot Widget -->
     <script>
-      (function(d,t) {
-        var BASE_URL="https://12keys-agency-chatwoot.go13ce.easypanel.host";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
+      (function(d, t) {
+        var BASE_URL = "https://chatwoot.12keys.agency";
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + "/packs/js/sdk.js";
+        g.defer = true;
         g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
+        s.parentNode.insertBefore(g, s);
+        g.onload = function() {
           window.chatwootSDK.run({
-            websiteToken: 'JqdHQ2WwSuyfvKNf5PsZsmR7',
+            websiteToken: "JqdHQ2WwSuyfvKNf5PsZsmR7",
             baseUrl: BASE_URL
-          })
-        }
-      })(document,"script");
+          });
+        };
+      })(document, "script");
     </script>
+    <!-- End Chatwoot Widget -->
+
   </body>
 </html>
