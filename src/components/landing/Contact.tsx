@@ -6,7 +6,7 @@ export function Contact() {
     {
       icon: MapPin,
       title: 'Address',
-      content: 'KK 201 Avenue, Kigali Rwanda',
+      content: 'KK 250 Ave, Kigali Rwanda',
     },
     {
       icon: Phone,
