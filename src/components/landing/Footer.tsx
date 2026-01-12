@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -61,7 +61,7 @@ export function Footer() {
                 <span>info@12keys.agency</span>
               </li>
               <li className="flex items-start gap-3 text-gray-400 font-light">
-                <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <Send className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <span>Telegram Chat:<br />Twelvekeys_bot</span>
               </li>
             </ul>

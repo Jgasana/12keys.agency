@@ -21,7 +21,7 @@ export function Contact() {
     {
       icon: Clock,
       title: 'Hours',
-      content: 'Available 24/7',
+      content: 'Mon - Fri / 8am to 7pm',
     },
   ];
 
