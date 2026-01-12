@@ -7,7 +7,7 @@ export function Footer() {
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Send, href: '#', label: 'Telegram' },
+    { icon: Send, href: 'https://t.me/Twelvekeys_bot', label: 'Telegram' },
   ];
 
   const quickLinks = [
