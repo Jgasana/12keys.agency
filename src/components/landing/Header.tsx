@@ -7,7 +7,7 @@ export function Header() {
   const navItems = [
     { label: 'Home', href: '#' },
     { label: 'Services', href: '#services' },
-    { label: 'About Us', href: '#about' },
+    { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -39,7 +39,7 @@ export function Header() {
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-light">Call Us</span>
+              <span className="font-light">Call</span>
             </a>
             <a
               href="mailto:info@12keys.agency"
@@ -79,7 +79,7 @@ export function Header() {
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors py-2"
               >
                 <Phone className="w-4 h-4" />
-                <span className="font-light">Call Us</span>
+                <span className="font-light">Call</span>
               </a>
               <a
                 href="mailto:info@12keys.agency"
