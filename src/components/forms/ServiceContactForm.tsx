@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { supabase } from '../../lib/supabaseClient';
 import { sendToWebhook } from '../../api/contact-webhook';
 
@@ -231,7 +231,7 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
           'Sending...'
         ) : (
           <>
-            <Send className="w-4 h-4" />
+            <Mail className="w-4 h-4" />
             Send Message
           </>
         )}
