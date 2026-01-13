@@ -16,7 +16,7 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'cc@12keys.agency',
+      content: 'info@12keys.agency',
     },
     {
       icon: Clock,
