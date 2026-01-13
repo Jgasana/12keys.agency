@@ -4,7 +4,7 @@ export function About() {
   const features = [
     {
       icon: Award,
-      title: 'Excellence',
+      title: 'Quality',
       description: 'Unwavering commitment to delivering exceptional service and unforgettable experiences',
     },
     {
