@@ -16,8 +16,8 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-light tracking-widest uppercase text-[#8e6d46]">
-              12Keys Agency
+            <a href="#">
+              <img src="/logo.jpeg" alt="12 Keys Concierge" className="h-[90px]" />
             </a>
           </div>
 
