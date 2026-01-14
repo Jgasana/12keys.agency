@@ -14,10 +14,10 @@ export function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-widest uppercase text-white mb-6 animate-fade-in">
-          Luxury Concierge
+          Executive Concierge Services 
         </h1>
         <p className="text-xl md:text-2xl font-light text-white/90 tracking-wide mb-8 animate-fade-in-delay">
-          Exceptional service and bespoke experiences in Rwanda
+          Quietly orchestrated mobility, hospitality, business facilitation, and lifestyle coordination for individuals whose time, privacy, and continuity cannot be compromised
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-2">
           <a
@@ -30,7 +30,7 @@ export function Hero() {
             href="#contact"
             className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#8e6d46] uppercase tracking-wider text-sm font-light transition-all"
           >
-            Get in Touch
+            Learn More
           </a>
         </div>
       </div>

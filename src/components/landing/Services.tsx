@@ -8,35 +8,31 @@ export function Services() {
 
   const services = [
     {
-      title: 'Private Events',
+      title: 'Travel & Hospitality',
       image: 'https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Curated private events tailored to your specific requirements. From intimate gatherings to grand celebrations, we handle every detail with precision.',
+      description: 'Seamless travel, mobility, and hospitality planning with refined coordination',
     },
     {
-      title: 'Corporate Functions',
+      title: 'Corporate & Delegation Concierge',
       image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Professional corporate event planning and management. Impress your clients and colleagues with flawlessly executed business functions.',
+      description: 'Structured support for boards, executive teams, and visiting delegations',
     },
     {
-      title: 'Luxury Experiences',
+      title: 'Relocation & Settlement Support',
       image: 'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Bespoke luxury experiences designed exclusively for you. Access to the most sought-after venues, services, and opportunities.',
+      description: 'Smooth transitions for executives and families relocating to Rwanda',
     },
     {
-      title: 'Venue Selection',
+      title: 'Business-to-Business (B2B) Connector',
       image: 'https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Expert guidance in selecting the perfect venue for your event. Exclusive access to premium locations across the city.',
+      description: 'Partner facilitation across sectors',
     },
     {
-      title: 'Catering Services',
+      title: 'Personal & Lifestyle Concierge',
       image: 'https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'World-class catering from renowned chefs and culinary teams. Customized menus to suit every taste and dietary requirement.',
+      description: 'Bespoke support for lifestyle, dining, and personal arrangements (by request).',
     },
-    {
-      title: 'Entertainment',
-      image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Premium entertainment options for any occasion. From live music to performance artists, we provide unforgettable experiences.',
-    },
+    
   ];
 
   return (
@@ -58,7 +54,7 @@ export function Services() {
               title={service.title}
               image={service.image}
               description={service.description}
-              ctaLabel="Inquire Now"
+              ctaLabel="Learn More"
               onClick={() => setSelectedService(service.title)}
             />
           ))}

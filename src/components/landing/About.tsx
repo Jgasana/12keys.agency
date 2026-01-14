@@ -5,17 +5,17 @@ export function About() {
     {
       icon: Award,
       title: 'Quality',
-      description: 'Unwavering commitment to delivering exceptional service and unforgettable experiences',
+      description: 'Structured, SOP-driven execution and Identity-shielded communication',
     },
     {
       icon: Clock,
       title: 'Availability',
-      description: 'Round-the-clock support ensuring your events run seamlessly at any time',
+      description: '24/7 support during active engagements',
     },
     {
       icon: Users,
       title: 'Expertise',
-      description: 'Seasoned professionals with extensive experience in luxury event management',
+      description: 'One dedicated concierge for every engagement',
     },
   ];
 
@@ -28,16 +28,22 @@ export function About() {
               About Us
             </h2>
             <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
-              We are a premier concierge service specializing in curating extraordinary private events and bespoke experiences. With years of expertise in the luxury sector, we pride ourselves on delivering impeccable service tailored to your unique vision.
+              12 Keys is a private executive concierge agency serving high-net-worth individuals, corporate boards, regional headquarters, diplomatic guests, and relocating executives in Rwanda.
             </p>
             <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
-              Our team of dedicated professionals works tirelessly to ensure every detail is perfect, from venue selection to entertainment coordination. We transform your ideas into unforgettable moments.
+              We operate as a single point of accountability, anticipating needs, managing details, and delivering seamless coordination across travel, residence, business engagement, and personal support.
+            </p>
+            <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+              The name 12 Keys reflects our core belief: that a life well-orchestrated is unlocked through mastery across the essential domains of living, travel, business, and personal care. Each “key” represents a field of access, coordination, and elevated experience, ensuring nothing is left to uncertainty, delay, or compromise.
+            </p>
+            <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+              At 12 Keys, every interaction is a key, unlocking a world of tailored services. From seamless on-ground travel coordination to lifestyle management and executive support, our promise is simple: Behind every door, there’s a tailored attention.
             </p>
             <a
               href="#contact"
               className="inline-block px-8 py-3 bg-[#8e6d46] hover:bg-[#a2886a] text-white uppercase tracking-wider text-sm font-light transition-colors"
             >
-              Start Planning
+              Request for a meeting
             </a>
           </div>
           <div className="relative">

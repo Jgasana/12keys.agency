@@ -7,8 +7,8 @@ export function Header() {
   const navItems = [
     { label: 'Home', href: '#' },
     { label: 'Services', href: '#services' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About us', href: '#about' },
+    { label: 'Contact us', href: '#contact' },
   ];
 
   return (
@@ -17,7 +17,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <a href="#">
-              <img src="/logo.jpeg" alt="12 Keys Concierge" className="h-[90px]" />
+              <img src="/logo.jpeg" alt="12 Keys Concierge" className="h-[80px]" />
             </a>
           </div>
 
@@ -39,7 +39,7 @@ export function Header() {
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-light">Call</span>
+              <span className="font-light">Chat</span>
             </a>
             <a
               href="mailto:info@12keys.agency"
