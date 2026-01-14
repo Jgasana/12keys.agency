@@ -10,7 +10,7 @@ export function About() {
     {
       icon: Clock,
       title: 'Availability',
-      description: '24/7 support during active engagements',
+      description: '24/6 support during active engagements',
     },
     {
       icon: Users,
