@@ -15,6 +15,7 @@ export function Header() {
     { label: 'B2B Connector', href: '/b2b' },
     { label: 'Travel & Hospitality', href: '/travel-hospitality' },
     { label: 'Corporate & Delegation', href: '/corporate-delegation' },
+    { label: 'Relocation & Settlement', href: '/relocation-settlement' },
   ];
 
   return (
