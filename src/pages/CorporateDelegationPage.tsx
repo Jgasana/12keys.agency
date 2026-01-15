@@ -73,7 +73,7 @@ export function CorporateDelegationPage() {
         <section
           className="relative text-white py-40 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(142,109,70,0.5) 0%, rgba(162,136,106,0.5) 100%), url(https://images.pexels.com/photos/9489091/pexels-photo-9489091.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop)',
+            backgroundImage: 'linear-gradient(135deg, rgba(142,109,70,0.5) 0%, rgba(162,136,106,0.5) 100%), url(https://images.pexels.com/photos/8730327/pexels-photo-8730327.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop)',
             backgroundAttachment: 'fixed',
             minHeight: '500px',
             backgroundSize: 'cover',
