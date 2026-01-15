@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface ServiceCardProps {
   title: string;
@@ -6,6 +7,7 @@ interface ServiceCardProps {
   description: string;
   ctaLabel?: string;
   onClick?: () => void;
+  href?: string;
 }
 
 export function ServiceCard({
@@ -14,9 +16,21 @@ export function ServiceCard({
   description,
   ctaLabel = 'Learn More',
   onClick,
+  href,
 }: ServiceCardProps) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (href) {
+      navigate(href);
+      window.scrollTo(0, 0);
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
-    <div className="group cursor-pointer" onClick={onClick}>
+    <div className="group cursor-pointer" onClick={handleClick}>
       <div className="relative overflow-hidden bg-gray-200 aspect-[4/3]">
         <img
           src={image}
