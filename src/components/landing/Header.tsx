@@ -16,6 +16,7 @@ export function Header() {
     { label: 'Travel & Hospitality', href: '/travel-hospitality' },
     { label: 'Corporate & Delegation', href: '/corporate-delegation' },
     { label: 'Relocation & Settlement', href: '/relocation-settlement' },
+    { label: 'Personal & Lifestyle', href: '/personal-lifestyle' },
   ];
 
   return (

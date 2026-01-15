@@ -5,6 +5,7 @@ import { B2BPage } from './pages/B2BPage';
 import { TravelHospitalityPage } from './pages/TravelHospitalityPage';
 import { CorporateDelegationPage } from './pages/CorporateDelegationPage';
 import { RelocationSettlementPage } from './pages/RelocationSettlementPage';
+import { PersonalLifestyleConcierge } from './pages/PersonalLifestyleConcierge';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { Dashboard } from './pages/Dashboard';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/travel-hospitality" element={<TravelHospitalityPage />} />
           <Route path="/corporate-delegation" element={<CorporateDelegationPage />} />
           <Route path="/relocation-settlement" element={<RelocationSettlementPage />} />
+          <Route path="/personal-lifestyle" element={<PersonalLifestyleConcierge />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
