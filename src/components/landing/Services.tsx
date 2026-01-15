@@ -9,8 +9,9 @@ export function Services() {
   const services = [
     {
       title: 'Travel & Hospitality',
-      image: 'https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: 'https://images.pexels.com/photos/8069368/pexels-photo-8069368.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       description: 'Seamless travel, mobility, and hospitality planning with refined coordination',
+      href: '/travel-hospitality',
     },
     {
       title: 'Corporate & Delegation Concierge',
@@ -19,20 +20,21 @@ export function Services() {
     },
     {
       title: 'Relocation & Settlement Support',
-      image: 'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: 'https://images.pexels.com/photos/7464736/pexels-photo-7464736.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       description: 'Smooth transitions for executives and families relocating to Rwanda',
     },
     {
       title: 'Business-to-Business (B2B) Connector',
-      image: 'https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Partner facilitation across sectors',
+      image: 'https://images.pexels.com/photos/6077647/pexels-photo-6077647.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      description: 'Strategic introductions connecting credible companies and institutions across sectors',
+      href: '/b2b',
     },
     {
       title: 'Personal & Lifestyle Concierge',
-      image: 'https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: 'https://images.pexels.com/photos/3727469/pexels-photo-3727469.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       description: 'Bespoke support for lifestyle, dining, and personal arrangements (by request).',
     },
-    
+
   ];
 
   return (
@@ -55,7 +57,8 @@ export function Services() {
               image={service.image}
               description={service.description}
               ctaLabel="Learn More"
-              onClick={() => setSelectedService(service.title)}
+              href={(service as any).href}
+              onClick={() => !((service as any).href) && setSelectedService(service.title)}
             />
           ))}
         </div>
