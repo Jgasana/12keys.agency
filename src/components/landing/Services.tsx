@@ -9,7 +9,7 @@ export function Services() {
   const services = [
     {
       title: 'Travel & Hospitality',
-      image: 'https://images.pexels.com/photos/8069368/pexels-photo-8069368.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: 'https://images.pexels.com/photos/14131701/pexels-photo-14131701.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       description: 'Seamless travel, mobility, and hospitality planning with refined coordination',
       href: '/travel-hospitality',
     },
