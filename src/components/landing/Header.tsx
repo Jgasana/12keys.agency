@@ -1,4 +1,4 @@
-import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
+import { Menu, X, MessageCircle, Mail, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 export function Header() {
@@ -14,6 +14,7 @@ export function Header() {
   const services = [
     { label: 'B2B Connector', href: '/b2b' },
     { label: 'Travel & Hospitality', href: '/travel-hospitality' },
+    { label: 'Corporate & Delegation', href: '/corporate-delegation' },
   ];
 
   return (
@@ -70,13 +71,17 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="tel:+250788863209"
+            <button
+              onClick={() => {
+                if (window.$chatwoot) {
+                  window.$chatwoot.toggle();
+                }
+              }}
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors"
             >
-              <Phone className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
               <span className="font-light">Chat</span>
-            </a>
+            </button>
             <a
               href="mailto:info@12keys.agency"
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors"
@@ -148,13 +153,18 @@ export function Header() {
             ))}
 
             <div className="pt-4 border-t border-gray-200 space-y-3">
-              <a
-                href="tel:+250 788863209"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors py-2"
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  if (window.$chatwoot) {
+                    window.$chatwoot.toggle();
+                  }
+                }}
+                className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors py-2 w-full"
               >
-                <Phone className="w-4 h-4" />
-                <span className="font-light">Call</span>
-              </a>
+                <MessageCircle className="w-4 h-4" />
+                <span className="font-light">Chat</span>
+              </button>
               <a
                 href="mailto:info@12keys.agency"
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#8e6d46] transition-colors py-2"
