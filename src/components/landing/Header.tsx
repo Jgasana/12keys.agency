@@ -1,7 +1,9 @@
 import { Menu, X, MessageCircle, Mail, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
@@ -47,13 +49,13 @@ export function Header() {
               {/* Dropdown Menu */}
               <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {services.map((service) => (
-                  <a
+                  <button
                     key={service.label}
-                    href={service.href}
-                    className="block px-4 py-3 text-sm uppercase tracking-wider font-light text-gray-700 hover:bg-[#f3f3f3] hover:text-[#8e6d46] transition-colors first:rounded-t-lg last:rounded-b-lg"
+                    onClick={() => navigate(service.href)}
+                    className="w-full text-left block px-4 py-3 text-sm uppercase tracking-wider font-light text-gray-700 hover:bg-[#f3f3f3] hover:text-[#8e6d46] transition-colors first:rounded-t-lg last:rounded-b-lg"
                   >
                     {service.label}
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>
@@ -124,17 +126,17 @@ export function Header() {
               {isServicesOpen && (
                 <div className="pl-6 space-y-2 mt-2 border-l-2 border-[#8e6d46]">
                   {services.map((service) => (
-                    <a
+                    <button
                       key={service.label}
-                      href={service.href}
                       onClick={() => {
+                        navigate(service.href);
                         setIsMenuOpen(false);
                         setIsServicesOpen(false);
                       }}
-                      className="block text-sm uppercase tracking-wider font-light text-gray-600 hover:text-[#8e6d46] transition-colors py-2"
+                      className="w-full text-left block text-sm uppercase tracking-wider font-light text-gray-600 hover:text-[#8e6d46] transition-colors py-2"
                     >
                       {service.label}
-                    </a>
+                    </button>
                   ))}
                 </div>
               )}
