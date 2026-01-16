@@ -8,31 +8,34 @@ export function Services() {
 
   const services = [
     {
-      title: 'Travel & Hospitality',
-      image: 'https://images.pexels.com/photos/14131701/pexels-photo-14131701.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Seamless travel, mobility, and hospitality planning with refined coordination',
-      href: '/travel-hospitality',
+      title: 'Corporate & Delegation Concierge',
+      image: 'https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      description: 'Structured support for boards, executive teams, and visiting delegations',
+      href: '/corporate-delegation',
     },
     {
-      title: 'Corporate & Delegation Concierge',
-      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Structured support for boards, executive teams, and visiting delegations',
+      title: 'Business-to-Business (B2B) Connector',
+      image: 'https://images.pexels.com/photos/6950015/pexels-photo-6950015.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      description: 'Strategic introductions connecting credible companies and institutions across sectors',
+      href: '/b2b',
+    },
+    {
+      title: 'Travel & Hospitality',
+      image: 'https://images.pexels.com/photos/7820359/pexels-photo-7820359.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      description: 'Seamless travel, mobility, and hospitality planning with refined coordination',
+      href: '/travel-hospitality',
     },
     {
       title: 'Relocation & Settlement Support',
       image: 'https://images.pexels.com/photos/7464736/pexels-photo-7464736.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       description: 'Smooth transitions for executives and families relocating to Rwanda',
-    },
-    {
-      title: 'Business-to-Business (B2B) Connector',
-      image: 'https://images.pexels.com/photos/6077647/pexels-photo-6077647.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      description: 'Strategic introductions connecting credible companies and institutions across sectors',
-      href: '/b2b',
+      href: '/relocation-settlement',
     },
     {
       title: 'Personal & Lifestyle Concierge',
       image: 'https://images.pexels.com/photos/3727469/pexels-photo-3727469.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       description: 'Bespoke support for lifestyle, dining, and personal arrangements (by request).',
+      href: '/personal-lifestyle',
     },
 
   ];

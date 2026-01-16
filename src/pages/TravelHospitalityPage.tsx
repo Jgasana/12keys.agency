@@ -79,7 +79,7 @@ export function TravelHospitalityPage() {
         <section
           className="relative text-white py-40 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(142,109,70,0.4) 0%, rgba(162,136,106,0.4) 100%), url(https://images.pexels.com/photos/24827415/pexels-photo-24827415.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop)',
+            backgroundImage: 'linear-gradient(135deg, rgba(142,109,70,0.4) 0%, rgba(162,136,106,0.4) 100%), url(https://images.pexels.com/photos/4173354/pexels-photo-4173354.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop)',
             backgroundAttachment: 'fixed',
             minHeight: '500px',
             backgroundSize: 'cover',
