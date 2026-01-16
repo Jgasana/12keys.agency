@@ -39,13 +39,10 @@ export function Header() {
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center gap-1 text-sm uppercase tracking-wider font-light text-gray-700 hover:text-[#8e6d46] transition-colors py-2"
-              >
+              <div className="flex items-center gap-1 text-sm uppercase tracking-wider font-light text-gray-700 hover:text-[#8e6d46] transition-colors py-2 cursor-pointer">
                 Services
                 <ChevronDown className="w-4 h-4 transform group-hover:rotate-180 transition-transform" />
-              </button>
+              </div>
 
               {/* Dropdown Menu */}
               <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
