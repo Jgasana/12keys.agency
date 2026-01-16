@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import { LandingPage } from './pages/LandingPage';
 import { B2BPage } from './pages/B2BPage';
@@ -12,10 +13,31 @@ import { Dashboard } from './pages/Dashboard';
 import { StaffLogin } from './pages/StaffLogin';
 import { StaffDashboard } from './pages/StaffDashboard';
 
+function ScrollToAnchor() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <ScrollToAnchor />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/b2b" element={<B2BPage />} />
