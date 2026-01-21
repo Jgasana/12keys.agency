@@ -49,21 +49,29 @@ export function ServiceContactForm({ serviceName = '', onSubmit }: ServiceContac
       const fullName = `${formData.firstName} ${formData.lastName}`.trim();
       const fullPhone = `${formData.countryCode}${formData.phoneNumber}`.trim();
 
-      const { error } = await supabase
-        .from('service_requests')
-        .insert([
-          {
-            name: fullName,
-            email: formData.email,
-            phone: fullPhone,
-            service_type: formData.serviceName,
-            message: formData.message,
-            status: 'pending',
-          },
-        ]);
+      // Try to save to Supabase if available
+      if (supabase) {
+        const { error } = await supabase
+          .from('service_requests')
+          .insert([
+            {
+              name: fullName,
+              email: formData.email,
+              phone: fullPhone,
+              service_type: formData.serviceName,
+              message: formData.message,
+              status: 'pending',
+            },
+          ]);
 
-      if (error) throw error;
+        if (error) {
+          console.warn('Supabase error (non-fatal):', error);
+        }
+      } else {
+        console.log('Supabase not configured, skipping database insert');
+      }
 
+      // Send to webhook
       await sendToWebhook({
         name: fullName,
         email: formData.email,
