@@ -16,7 +16,8 @@ export async function sendToWebhook(data: ContactWebhookPayload): Promise<void> 
     timestamp: new Date().toISOString(),
   };
 
-  console.log('Sending to webhook:', payload);
+  console.log('Sending to webhook URL:', WEBHOOK_URL);
+  console.log('Webhook payload:', payload);
 
   try {
     const response = await fetch(WEBHOOK_URL, {
@@ -25,20 +26,23 @@ export async function sendToWebhook(data: ContactWebhookPayload): Promise<void> 
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
+      mode: 'cors',
+      credentials: 'omit',
     });
 
     console.log('Webhook response status:', response.status);
+    console.log('Webhook response headers:', response.headers);
 
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Webhook error response:', errorText);
-      throw new Error(`Webhook request failed with status: ${response.status}`);
+      throw new Error(`Webhook request failed with status: ${response.status}. Response: ${errorText}`);
     }
 
-    console.log('Webhook sent successfully');
+    const responseData = await response.json().catch(() => ({}));
+    console.log('Webhook sent successfully. Response:', responseData);
   } catch (error) {
     console.error('Error sending to webhook:', error);
-    // Don't throw - allow form to succeed even if webhook fails
-    // This prevents the "something went wrong" message
+    throw error;
   }
 }
