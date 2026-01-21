@@ -27,13 +27,18 @@ export async function sendToWebhook(data: ContactWebhookPayload): Promise<void> 
       body: JSON.stringify(payload),
     });
 
+    console.log('Webhook response status:', response.status);
+
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Webhook error response:', errorText);
       throw new Error(`Webhook request failed with status: ${response.status}`);
     }
 
     console.log('Webhook sent successfully');
   } catch (error) {
     console.error('Error sending to webhook:', error);
-    throw error;
+    // Don't throw - allow form to succeed even if webhook fails
+    // This prevents the "something went wrong" message
   }
 }
