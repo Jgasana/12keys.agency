@@ -27,7 +27,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <a href="/">
-              <img src="/logo.jpeg" alt="12 Keys Concierge" className="h-[80px]" />
+              <img src="/12keys-logo.png" alt="12 Keys Concierge" className="h-[81px]" />
             </a>
           </div>
 

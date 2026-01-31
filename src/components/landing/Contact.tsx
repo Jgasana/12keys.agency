@@ -62,8 +62,8 @@ export function Contact() {
 
             <div className="aspect-[16/9] overflow-hidden bg-gray-200">
               <img
-                src="https://images.pexels.com/photos/2144326/pexels-photo-2144326.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Luxury location"
+                src="/contact-image.jpg"
+                alt="12 Keys Contact"
                 className="w-full h-full object-cover"
               />
             </div>

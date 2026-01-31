@@ -49,8 +49,8 @@ export function About() {
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/1560424/pexels-photo-1560424.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Luxury venue"
+                src="/about-image.jpg"
+                alt="12 Keys Concierge Service"
                 className="w-full h-full object-cover"
               />
             </div>
